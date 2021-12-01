@@ -23,7 +23,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { UserServiceComponent } from './dashboard/shared/user-service/user-service.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -72,7 +71,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     
   ],
   providers: [
-    UserServiceComponent 
+   
   ],
   bootstrap: [AppComponent]
 })

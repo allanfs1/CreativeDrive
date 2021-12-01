@@ -5,13 +5,36 @@
         <div class="row">
             <div class="col-12">                            
                 <mat-selection-list #shoes [multiple]="false">
-                    <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
-                      {{shoe}}
+                    <mat-list-option *ngFor="let item of usersRes" [value]="item">
+                        <table class="table table-hover">                     
+                            <tbody>
+                                <tr >
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.CPF}}</td>
+                                    <td>{{item.profile}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>{{item.password}}</td>
+                                    <td>{{item.login}}</td>
+                                    <td *ngIf="item.profile == 'ADMIN'">
+                                        <button mat-raised-button type="button" matTooltip="Visualizar" [routerLink]="['/users/all']" routerLinkActive="router-link-active"   [matTooltipPosition]="'above'" class="btn btn-warning btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">visualizar</i>
+                                        </button>
+                                        <button mat-raised-button type="button"  [routerLink]="['/update',item.id]"  matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button mat-raised-button type="button" [routerLink]="['/remove',item.id]"  matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </mat-list-option>
                   </mat-selection-list>
                   
-                  <p>
-                    Option selected: 
+                  <p *ngIf="!usersRes">
+                    Nenhum Usuario cadastrado
                   </p>           
             </div>
         </div>

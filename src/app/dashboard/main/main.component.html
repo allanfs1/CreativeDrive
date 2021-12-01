@@ -1,80 +1,22 @@
 
-
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let item of usersRes | slice:0:4">
                 <div class="card card-stats">
-                    <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-header card-header-default card-header-icon">
                         <div class="card-icon">
                             <i class="material-icons">content_copy</i>
                         </div>
-                        <p class="card-category">Usuario</p>
-                        <h3 class="card-title">nome
-                            <small>ID</small>
+                        <p class="card-category">{{item.name}}</p>
+                        <h3 class="card-title">{{item.email}}
+                            <small>{{item.cpf}}</small>
                         </h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">warning</i>
-                            <a href="javascript:void(0)">Get More Space...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-header card-header-primary card-header-icon">
-                        <div class="card-icon">
-                            <i class="material-icons">content_copy</i>
-                        </div>
-                        <p class="card-category">Usuario</p>
-                        <h3 class="card-title">nome
-                            <small>ID</small>
-                        </h3>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons text-danger">warning</i>
-                            <a href="javascript:void(0)">Get More Space...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-header card-header-success card-header-icon">
-                        <div class="card-icon">
-                            <i class="material-icons">content_copy</i>
-                        </div>
-                        <p class="card-category">Usuario</p>
-                        <h3 class="card-title">nome
-                            <small>ID</small>
-                        </h3>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons text-danger">warning</i>
-                            <a href="javascript:void(0)">Get More Space...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-header card-header-danger card-header-icon">
-                        <div class="card-icon">
-                            <i class="material-icons">content_copy</i>
-                        </div>
-                        <p class="card-category">Usuario</p>
-                        <h3 class="card-title">nome
-                            <small>ID</small>
-                        </h3>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons text-danger">warning</i>
-                            <a href="javascript:void(0)">Get More Space...</a>
+                            <a href="">{{item.login}}</a>
                         </div>
                     </div>
                 </div>
@@ -88,16 +30,15 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-header card-header-warning">
-                    <h4 class="card-title">Employees Stats</h4>
-                    <p class="card-category">New employees on 15th September, 2016</p>
+                    <h4 class="card-title">Lista de Usuários cadastrado</h4>
+                    <p class="card-category"> {{date | date:"h"}} September, {{date | date:"d-mm-Y"}}</p>
                 </div>
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <thead class="text-warning">
-                            <th>ID</th>
+                            <th>#ID</th>
                             <th>CPF</th>
                             <th>NIVEL</th>
-                            <th>ADMIN</th>
                             <th>Nome</th>
                             <th>E-mail</th>
                             <th>Senha</th>
@@ -105,22 +46,22 @@
                             <th>ACOES</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>4606665</td>
-                                <td>USER</td>
-                                <td>Allan</td>
-                                <td>allanfdw@gmail</td>
-                                <td>121223</td>
-                                <td>admin</td>
+                            <tr *ngFor="let item of usersRes">
+                                <td>{{item.id}}</td>
+                                <td>{{item.CPF}}</td>
+                                <td>{{item.profile}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.password}}</td>
+                                <td>{{item.login}}</td>
                                 <td>
-                                    <button mat-raised-button type="button" matTooltip="Visualizar" [matTooltipPosition]="'above'" class="btn btn-warning btn-link btn-sm btn-just-icon">
+                                    <button mat-raised-button type="button" matTooltip="Visualizar" [routerLink]="['/users/all']" routerLinkActive="router-link-active"   [matTooltipPosition]="'above'" class="btn btn-warning btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">visualizar</i>
                                     </button>
-                                    <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                    <button mat-raised-button type="button"  [routerLink]="['/update',item.id]"  matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">edit</i>
                                     </button>
-                                    <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <button mat-raised-button type="button" [routerLink]="['/remove',item.id]"  matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">close</i>
                                     </button>
                                 </td>

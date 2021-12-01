@@ -7,7 +7,8 @@
 		      "password":"123456",
 		      "CPF":"53875964444",
 		      "email":"allanre@gmail.com",
-		      "profile":"admin"
+		      "profile":"ADMIN",
+		      "login":"admin_allan"
 		    },
 		     {
 		      "id": 2,
@@ -15,7 +16,8 @@
 		      "password":"123456",
 		      "CPF":"53875964444",
 		      "email":"allanre@gmail.com",
-		      "profile":"admin"
+		      "profile":"USER",
+		      "login":"admin_allan"
 		    },
 		     {
 		      "id": 3,
@@ -23,7 +25,8 @@
 		      "password":"123456",
 		      "CPF":"53875964444",
 		      "email":"allanre@gmail.com",
-		      "profile":"admin"
+		      "profile":"USER",
+              "login":"admin_allan"
 		    },
 		     {
 		      "id": 4,
@@ -31,7 +34,9 @@
 		      "password":"123456",
 		      "CPF":"53875964444",
 		      "email":"allanre@gmail.com",
-		      "profile":"admin"
+		      "profile":"USER",
+		      "login":"admin_allan"
+
 		    },
 		     {
 		      "id": 5,
@@ -39,7 +44,9 @@
 		      "password":"123456",
 		      "CPF":"53875964444",
 		      "email":"allanre@gmail.com",
-		      "profile":"admin"
+		      "profile":"USER",
+		      "login":"admin_allan"
+
 		    }
 		   
   ]

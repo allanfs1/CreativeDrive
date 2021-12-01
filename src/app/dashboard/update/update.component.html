@@ -1,0 +1,33 @@
+
+<div class="main-content">   
+ <div class="container-fluid">
+    <form  #formsValidar="ngForm">
+       <div class="row">  
+            <div class="col-lg-3 col-md-6 col-sm-6">
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" [(ngModel)]="name" id="name" name="name" required  minlength="5" maxlength="45" #na="ngModel">
+                <button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+                <mat-icon>close</mat-icon>
+                </button> 
+                <div *ngIf="na.errors &&(na.dirty || na.touched)" class="alert alert-danger mt-2 p-2">
+                    <div class="p-1" [hidden]="!na.errors.minlength">
+                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu nome deve ter 5 caracteres
+                    </div>
+                     <div class="p-1" [hidden]="!na.errors.required">
+                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+                    </div>
+                </div>
+            </mat-form-field>
+          </div>
+        </div> 
+        <button mat-raised-button color="primary" type="submit" [disabled]="!formsValidar.form.valid" (click)="update(1)">
+            Atualizar
+        </button>
+     </form> 
+  </div>
+  <a class="pull-right mt-3" mat-raised-button color="primary" href="/" >
+    Voltar
+  </a>
+</div>
+<mat-divider></mat-divider>

@@ -19,7 +19,11 @@ import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './users/users.component';
 import {MatListModule} from '@angular/material/list';
-
+import { UserServiceService } from './shared/user-service.service';
+import { AppRoutingModule } from '../app-routing.module';
+import { UpdateComponent } from './update/update.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -28,10 +32,12 @@ import {MatListModule} from '@angular/material/list';
     ProfileComponent,
     MainComponent,
     UsersComponent,
+    UpdateComponent,
 
   ],
   imports: [
     CommonModule,
+    AppRoutingModule,
     MatSliderModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -45,7 +51,13 @@ import {MatListModule} from '@angular/material/list';
     MatButtonToggleModule,
     MatBottomSheetModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule
+  ],
+  providers: [
+    UserServiceService
   ]
 })
 export class DashboardModule { }
