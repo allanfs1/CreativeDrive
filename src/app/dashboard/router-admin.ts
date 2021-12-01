@@ -2,6 +2,7 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { Routes } from '@angular/router';
+import { UsersComponent } from './users/users.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -22,5 +23,11 @@ export const AdminLayoutRoutes: Routes = [
      path: 'profile',
       component: ProfileComponent
     },
+    {
+        path: 'users/all',
+         component: UsersComponent
+    },
+
+ 
  
 ];

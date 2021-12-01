@@ -1,0 +1,19 @@
+
+
+<div class="main-content mt-4 pt-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">                            
+                <mat-selection-list #shoes [multiple]="false">
+                    <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+                      {{shoe}}
+                    </mat-list-option>
+                  </mat-selection-list>
+                  
+                  <p>
+                    Option selected: 
+                  </p>           
+            </div>
+        </div>
+    </div>
+</div>

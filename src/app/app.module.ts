@@ -24,12 +24,27 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { UserServiceComponent } from './dashboard/shared/user-service/user-service.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { SlidebarComponent } from './slidebar/slidebar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    SlidebarComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     DashboardModule,
     MatSliderModule,
@@ -51,6 +66,9 @@ import { UserServiceComponent } from './dashboard/shared/user-service/user-servi
     MatPaginatorModule,
     MatTooltipModule,
     BrowserAnimationsModule,
+    MatButtonToggleModule,
+    MatBottomSheetModule,
+    MatIconModule
     
   ],
   providers: [
