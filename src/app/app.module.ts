@@ -22,6 +22,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { UserServiceComponent } from './dashboard/shared/user-service/user-service.component';
 @NgModule({
   declarations: [
     AppComponent
@@ -29,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DashboardModule,
     MatSliderModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -50,7 +53,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     
   ],
-  providers: [],
+  providers: [
+    UserServiceComponent 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
