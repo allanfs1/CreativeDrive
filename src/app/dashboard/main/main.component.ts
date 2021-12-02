@@ -23,6 +23,7 @@ export class MainComponent implements OnInit {
   public date:Date = new Date();
   public usersRes:ModelUsers[] = [];
   public erro:string = '';
+  public hide:boolean = true;
   dataSource: MatTableDataSource<ModelUsers>;
   displayedColumns: string[] = ['id', 'name', 'CPF', 'login','profile','email','password'];
   auth: any;
