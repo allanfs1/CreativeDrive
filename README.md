@@ -1,4 +1,31 @@
-# Drive
+
+
+# Servidor Back End
+
+# 1 – Json Serve
+
+npm install -g json-server
+
+# 2 – Json Serve
+
+Porto alternativo
+Você pode iniciar o servidor JSON em outras portas com o --portsinalizador:
+
+json-server --watch db.json --port 3000
+
+Acesso de qualquer lugar
+Você pode acessar sua API falsa de qualquer lugar usando CORS e JSONP.
+
+# 3 – Rotas
+### Request	URL	Detalhes
+GET	    /users/all	Busca todos os produtos
+GET	    /users/1	Busca um produto
+POST	/update/1	Salva um produto
+PUT	    /update/1	Atualiza dos os dados do produto
+DELETE	/remove/1	Remove um produto
+
+
+# Projeto  Drive
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
