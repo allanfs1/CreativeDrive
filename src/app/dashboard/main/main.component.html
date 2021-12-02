@@ -54,7 +54,7 @@
                     <h4 class="card-title">Lista de Usuários cadastrado</h4>
                     <p class="card-category"> {{date | date:"h"}} September, {{date | date:"d-mm-Y"}}</p>
                 </div>
-                <div class="card-body">
+                <div>
                 <mat-form-field appearance="standard">
                     <mat-label>Filter</mat-label>
                     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
@@ -63,39 +63,54 @@
                   <div class="mat-elevation-z8">
                     <table mat-table [dataSource]="dataSource" matSort>
                       <!-- ID Column -->
-                      <ng-container style="width: 100px;" matColumnDef="id">
+                      <ng-container *ngIf="auth.rule == 'ADMIN'" style="width: 500px;" matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                        <td mat-cell *matCellDef="let row"> {{row.id}} 
+            
+                            <button mat-raised-button type="button" matTooltip="Visualizar" [routerLink]="['/views',row.id]" routerLinkActive="router-link-active"   [matTooltipPosition]="'above'" class="btn btn-warning btn-link btn-sm btn-just-icon">
+                                <i class="material-icons">visualizar</i>
+                            </button>
+                            <button mat-raised-button type="button"  [routerLink]="['/update',row.id]"  matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button mat-raised-button type="button" (click)="removerRegister(row.id)"  matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </td>
+                      </ng-container>
+                       <!-- ID Column -->
+                       <ng-container *ngIf="auth.rule == 'USER'" style="width: 500px;" matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
                         <td mat-cell *matCellDef="let row"> {{row.id}} </td>
                       </ng-container>
-
     
-                     <ng-container  matColumnDef="name">
+                     <ng-container style="width: 500px;"  matColumnDef="name">
                             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
                             <td mat-cell *matCellDef="let row"> {{row.name}} </td>
                     </ng-container>
 
-                      <ng-container matColumnDef="email">
+                      <ng-container style="width: 900px;"  matColumnDef="email">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header>E-mail </th>
                         <td mat-cell *matCellDef="let row"> {{row.email}}</td>
                       </ng-container>
 
-                      <ng-container matColumnDef="password">
+                      <ng-container style="width: 1000px;"  matColumnDef="password">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Senha </th>
                         <td mat-cell *matCellDef="let row"> {{row.password}}</td>
                       </ng-container>
 
-                      <ng-container matColumnDef="profile">
+                      <ng-container style="width: 500px;"  matColumnDef="profile">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Perfil </th>
                         <td mat-cell *matCellDef="let row"> {{row.profile}}</td>
                       </ng-container>
                   
              
-                      <ng-container matColumnDef="CPF">
+                      <ng-container style="width: 500px;"  matColumnDef="CPF">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> CPF </th>
                         <td mat-cell *matCellDef="let row"> {{row.CPF}}</td>
                       </ng-container>
                   
-                      <ng-container matColumnDef="login">
+                      <ng-container style="width: 500px;"  matColumnDef="login">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Login </th>
                         <td mat-cell *matCellDef="let row"> {{row.login}} </td>
                       </ng-container>
@@ -111,7 +126,6 @@
                   
                     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
                   </div>
-                  
                 </div>
         </div><!--fim table-->
     </div>

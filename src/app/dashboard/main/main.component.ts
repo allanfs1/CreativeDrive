@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+
   constructor(public service:UserServiceService,private rotas:Router) { }
 
   public success: string;
@@ -24,10 +25,12 @@ export class MainComponent implements OnInit {
   public erro:string = '';
   dataSource: MatTableDataSource<ModelUsers>;
   displayedColumns: string[] = ['id', 'name', 'CPF', 'login','profile','email','password'];
+  auth: any;
 
   ngOnInit(): void {
     this.service.valid("/dashboard");
     this.getAll();
+    this.auth = this.service.getSession();
   }
   
 

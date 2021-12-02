@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
     this.service.getById(1).subscribe(res => {    
        this.dataUser.id = res["id"]
        this.dataUser.name = res["name"]
+       this.dataUser.rule = res["profile"]
        this.service.createSession(this.dataUser);
     });
    }

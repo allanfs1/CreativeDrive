@@ -16,7 +16,12 @@ json-server --watch db.json --port 3000
 Acesso de qualquer lugar
 Você pode acessar sua API falsa de qualquer lugar usando CORS e JSONP.
 
-# 3 – Rotas
+# 3 – login
+
+#### usuario:admin
+#### senha: 123456
+
+# 4 – Rotas
 ### Request	URL	Detalhes
 GET	    /users/all	Busca todos os produtos
 GET	    /users/1	Busca um produto
