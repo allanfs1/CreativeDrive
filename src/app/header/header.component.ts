@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from '../dashboard/shared/user-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private service:UserServiceService) { }
 
   public title:string = "Painel do Usuário";
-
+  public auth: any;
+  
   ngOnInit(): void {
+    this.auth = this.service.getSession();
   }
 
 }

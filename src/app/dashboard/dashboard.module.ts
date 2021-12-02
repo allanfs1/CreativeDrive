@@ -26,6 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ViewComponent } from './view/view.component';
+import { CreateComponent } from './create/create.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ViewComponent } from './view/view.component';
     UsersComponent,
     UpdateComponent,
     LoginComponent,
-    ViewComponent
+    ViewComponent,
+    CreateComponent
 
   ],
   imports: [
@@ -58,7 +61,8 @@ import { ViewComponent } from './view/view.component';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule
   ],
   providers: [
     UserServiceService

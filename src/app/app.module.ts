@@ -30,6 +30,7 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { SlidebarComponent } from './slidebar/slidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserServiceService } from './dashboard/shared/user-service.service';
 
 
 
@@ -73,7 +74,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     
   ],
   providers: [
-   
+    UserServiceService
   ],
   bootstrap: [AppComponent]
 })

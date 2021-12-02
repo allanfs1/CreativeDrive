@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { UpdateComponent } from './update/update.component';
 import { ViewComponent } from './view/view.component';
+import { CreateComponent } from './create/create.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -22,7 +23,7 @@ export const AdminLayoutRoutes: Routes = [
            component: LoginComponent
      },
     {
-     path: 'profile',
+     path: 'profile/:id',
       component: ProfileComponent
     },
     {
@@ -40,9 +41,12 @@ export const AdminLayoutRoutes: Routes = [
     {
         path: 'views/:id',
          component:ViewComponent
+    },
+    {
+        path: 'create',
+         component:CreateComponent
     }
 
- 
- 
+
  
 ];

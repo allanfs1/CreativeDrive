@@ -8,6 +8,9 @@
            <div [hidden]="!success" class="alert alert-success">
             <p> {{success}}</p>
            </div>
+           <div [hidden]="!erro" class="alert alert-danger">
+            <p> {{erro}}</p>
+         </div>
         </div>
       </div>
        <div class="row my-4 mt-4">  
@@ -93,13 +96,13 @@
         </mat-form-field>
         <mat-form-field class="example-form-field" appearance="fill">
           <mat-label>Perfil</mat-label>
-          <input matInput type="text" [value] ="profile" [(ngModel)]="profile" id="profile" name="profile" required  minlength="5" maxlength="11" #pl="ngModel">
+          <input matInput type="text" [value] ="profile" [(ngModel)]="profile" id="profile" name="profile" required  minlength="3" maxlength="11" #pl="ngModel">
           <button *ngIf="profile" matSuffix mat-icon-button aria-label="Clear" (click)="profile=''">
           <mat-icon>close</mat-icon>
           </button> 
           <div *ngIf="pl.errors &&(pl.dirty || pl.touched)" class="alert alert-danger mt-2 p-2">
               <div class="p-1" [hidden]="!pl.errors.minlength">
-                  <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu Perfil deve ter 5 caracteres
+                  <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu Perfil deve ter 3 caracteres
               </div>
               <div class="p-1" [hidden]="!pl.errors.required">
                   <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido

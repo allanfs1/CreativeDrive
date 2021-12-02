@@ -6,9 +6,9 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-default card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">content_copy</i>
+                            <i class="material-icons">supervisor_account</i>
                         </div>
-                        <p class="card-category">{{item.name}}</p>
+                        <p class="card-category"><mat-icon>verified_user</mat-icon>{{item.name}}</p>
                         <h3 class="card-title">{{item.email}}
                             <small>{{item.cpf}}</small>
                         </h3>
@@ -26,6 +26,11 @@
 </div>
 
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-3 mx-3">
+            <a href="/create" type="button" class="btn btn-outline-success"> <mat-icon>supervisor_account</mat-icon> Criar um novo usuário</a>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xl-12">
             <div class="row">

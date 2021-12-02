@@ -25,17 +25,19 @@ export class UpdateComponent implements OnInit {
   public usersRes:ModelUsers ;
   public erro:string = '';
   public hide:boolean = true;
-  success: string;
+  public success: string;
+
   
   constructor(public service:UserServiceService,public route:ActivatedRoute,private rotas:Router) { }
 
   ngOnInit(): void {
+    this.service.valid("/update");
     this.id =  this.route.snapshot.params["id"];
     this.getId(this.id);
   }
 
 /**
- * 
+ * update usuário
  * @param id 
  * @returns void
  */
@@ -58,7 +60,7 @@ export class UpdateComponent implements OnInit {
             this.erro = erro.error.mensagem;
             break;
           case 404: 
-            this.erro = "Notícia não localizada.";
+            this.erro = "Usuário não localizada.";
             break;
          case 500:
             this.erro = "Erro do Servidor";

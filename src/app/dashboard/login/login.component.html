@@ -3,6 +3,7 @@
     <div class="container-fluid ">
         <div class="row my-4">
             <div class="col-6 offset-3">
+             <form #formsValidar="ngForm">
                 <mat-card>
                     <mat-card-actions>
                         <a href="/register" mat-button>Registrar</a>
@@ -37,9 +38,19 @@
                             </div>
                             </mat-form-field>
                         </div>
+                        <button class="pull-right" (click)="auth()" type="submit" [disabled]="!formsValidar.form.valid" mat-raised-button color="warn"> Entar</button>
                     </mat-card-actions>
+                    <div class="row pt-3 mt-3">
+                        <div class="col-12">
+                           <div [hidden]="!erro" class="alert alert-danger">
+                            <p> {{erro}}</p>
+                           </div>
+                        </div>
+                      </div>
+                   
                     <button mat-button color="primary"><i class="fa fa-info"></i> info</button>
                   </mat-card>
+                </form>
             </div>
         </div>
     </div>

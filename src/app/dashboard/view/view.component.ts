@@ -18,6 +18,7 @@ export class ViewComponent implements OnInit {
   public hide:boolean = true;
   
   ngOnInit(): void {
+    this.service.valid("/view");
     this.id =  this.route.snapshot.params["id"];
     this.getId(this.id);
   }

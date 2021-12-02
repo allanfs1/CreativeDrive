@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-
+ 
 
   constructor(public service:UserServiceService,private rotas:Router) { }
 
@@ -19,6 +19,7 @@ export class MainComponent implements OnInit {
   public erro:string = '';
 
   ngOnInit(): void {
+    this.service.valid("/dashboard");
     this.getAll();
   }
 
