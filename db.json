@@ -51,14 +51,6 @@
       "CPF": "44444444444",
       "login": "allan",
       "profile": "ADMIN"
-    },
-    {
-      "id": "2136",
-      "name": "Allan Ferreira",
-      "password": "55555555555555",
-      "CPF": "43988856466",
-      "login": "allanAD",
-      "profile": "USER"
     }
   ]
 }

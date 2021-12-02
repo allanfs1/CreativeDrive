@@ -121,5 +121,14 @@ public valid(rota:string){
    }
 
 }
+/**
+ * Sair da sessão
+ */
+public forgot(){
+  sessionStorage.clear();
+  setTimeout(() => {
+    this.router.navigate(["/login"]);
+  }, 1000);
+}
 
 }

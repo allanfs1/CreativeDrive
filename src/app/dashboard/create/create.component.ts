@@ -19,8 +19,8 @@ export class CreateComponent implements OnInit {
   public CPF?:string;
   public email?:string;
   public login?:string;
-  public profile?:any;
-
+  public profile?:string;
+  
 
   public hide:boolean = true;
   public success: string='';
@@ -54,6 +54,7 @@ export class CreateComponent implements OnInit {
     let obj:object ={
       "id":this.getId(),
       "name":this.name,
+      "email":this.email,
       "password":this.password,
       "CPF":this.CPF,
       "login":this.login,

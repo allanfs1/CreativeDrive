@@ -28,7 +28,8 @@ import {MatCardModule} from '@angular/material/card';
 import { ViewComponent } from './view/view.component';
 import { CreateComponent } from './create/create.component';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -62,7 +63,9 @@ import {MatRadioModule} from '@angular/material/radio';
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    MatTableModule
   ],
   providers: [
     UserServiceService

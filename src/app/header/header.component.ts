@@ -13,9 +13,13 @@ export class HeaderComponent implements OnInit {
 
   public title:string = "Painel do Usuário";
   public auth: any;
-  
+
   ngOnInit(): void {
     this.auth = this.service.getSession();
+  }
+
+  public forgot(){
+    this.service.forgot();
   }
 
 }

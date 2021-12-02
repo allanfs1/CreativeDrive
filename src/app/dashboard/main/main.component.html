@@ -25,7 +25,14 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div *ngIf="spin === false"  class="container-fluid">
+    <div style="height: 50%;"  class="row">
+        <div class="col-12 offset-6 p-4 mt-4 my-4">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
+</div>
+<div *ngIf="spin === true" class="container-fluid">
     <div class="row">
         <div class="col-12 p-3 mx-3">
             <a href="/create" type="button" class="btn btn-outline-success"> <mat-icon>supervisor_account</mat-icon> Criar um novo usuário</a>
@@ -43,48 +50,69 @@
                    </div>
                 </div>
               </div>
-            <div class="card">
                 <div class="card-header card-header-warning">
                     <h4 class="card-title">Lista de Usuários cadastrado</h4>
                     <p class="card-category"> {{date | date:"h"}} September, {{date | date:"d-mm-Y"}}</p>
                 </div>
-                <div class="card-body table-responsive">
-                    <table class="table table-hover">
-                        <thead class="text-warning">
-                            <th>#ID</th>
-                            <th>CPF</th>
-                            <th>NIVEL</th>
-                            <th>Nome</th>
-                            <th>E-mail</th>
-                            <th>Senha</th>
-                            <th>Login</th>
-                            <th>ACOES</th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of usersRes">
-                                <td>{{item.id}}</td>
-                                <td>{{item.CPF}}</td>
-                                <td>{{item.profile}}</td>
-                                <td>{{item.name}}</td>
-                                <td>{{item.email}}</td>
-                                <td>{{item.password}}</td>
-                                <td>{{item.login}}</td>
-                                <td>
-                                    <button mat-raised-button type="button" matTooltip="Visualizar" [routerLink]="['/views',item.id]" routerLinkActive="router-link-active"   [matTooltipPosition]="'above'" class="btn btn-warning btn-link btn-sm btn-just-icon">
-                                        <i class="material-icons">visualizar</i>
-                                    </button>
-                                    <button mat-raised-button type="button"  [routerLink]="['/update',item.id]"  matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                        <i class="material-icons">edit</i>
-                                    </button>
-                                    <button mat-raised-button type="button" (click)="removerRegister(item.id)"  matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
+                <div class="card-body">
+                <mat-form-field appearance="standard">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                  </mat-form-field>
+                  
+                  <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource" matSort>
+                      <!-- ID Column -->
+                      <ng-container style="width: 100px;" matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                      </ng-container>
+
+    
+                     <ng-container  matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+                            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                    </ng-container>
+
+                      <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>E-mail </th>
+                        <td mat-cell *matCellDef="let row"> {{row.email}}</td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="password">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Senha </th>
+                        <td mat-cell *matCellDef="let row"> {{row.password}}</td>
+                      </ng-container>
+
+                      <ng-container matColumnDef="profile">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Perfil </th>
+                        <td mat-cell *matCellDef="let row"> {{row.profile}}</td>
+                      </ng-container>
+                  
+             
+                      <ng-container matColumnDef="CPF">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> CPF </th>
+                        <td mat-cell *matCellDef="let row"> {{row.CPF}}</td>
+                      </ng-container>
+                  
+                      <ng-container matColumnDef="login">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Login </th>
+                        <td mat-cell *matCellDef="let row"> {{row.login}} </td>
+                      </ng-container>
+                  
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  
+                      <!-- Row shown when there is no matching data. -->
+                      <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                      </tr>
                     </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+                  </div>
+                  
                 </div>
-            </div>
         </div><!--fim table-->
     </div>
 </div>
