@@ -1,1 +1,46 @@
-<p>login works!</p>
+
+<div class="main-content mt-4 pt-4">
+    <div class="container-fluid ">
+        <div class="row my-4">
+            <div class="col-6 offset-3">
+                <mat-card>
+                    <mat-card-actions>
+                        <a href="/register" mat-button>Registrar</a>
+                        <a href="/login" mat-button>Login</a>
+                        <h1 class="dispaly-4 lead border-bottom text-center text-uppercase mb-3 p-4">Login</h1>
+                        <div class="example-container p-4">    
+                            <mat-form-field appearance="fill">
+                                <mat-label>Nome</mat-label>
+                                <input matInput type="text" required minlength="5"  id="name" name="name" [(ngModel)]="name"  maxlength="45" class="example-right-align" placeholder="Nome" #na="ngModel">
+                                <div *ngIf="na.errors &&(na.dirty || na.touched)" class="alert alert-danger mt-2 p-2">
+                                    <div class="p-1" [hidden]="!na.errors.minlength">
+                                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu nome deve ter 5 caracteres
+                                    </div>
+                                     <div class="p-1" [hidden]="!na.errors.required">
+                                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+                                    </div>
+                                </div>
+                            </mat-form-field>
+                            <mat-form-field appearance="fill">
+                            <mat-label>Enter com a sua senha</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" id="password" name="password" [(ngModel)]="password"  required minlength="5"  #pa="ngModel">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <div *ngIf="pa.errors &&(pa.dirty || pa.touched)" class="alert alert-danger mt-2 p-2">
+                                <div class="p-1" [hidden]="!pa.errors.minlength">
+                                    <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> A sua senha deve ter 5 caracteres /[@#4]/
+                                </div>
+                                 <div class="p-1" [hidden]="!pa.errors.required">
+                                    <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+                                </div>
+                            </div>
+                            </mat-form-field>
+                        </div>
+                    </mat-card-actions>
+                    <button mat-button color="primary"><i class="fa fa-info"></i> info</button>
+                  </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

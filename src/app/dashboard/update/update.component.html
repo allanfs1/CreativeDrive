@@ -1,32 +1,120 @@
 
-<div class="main-content">   
+
+<div class="main-content mt-4">   
  <div class="container-fluid">
     <form  #formsValidar="ngForm">
-       <div class="row">  
-            <div class="col-lg-3 col-md-6 col-sm-6">
-            <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>Nome</mat-label>
-                <input matInput type="text" [(ngModel)]="name" id="name" name="name" required  minlength="5" maxlength="45" #na="ngModel">
-                <button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+      <div class="row">
+        <div class="col-12">
+           <div [hidden]="!success" class="alert alert-success">
+            <p> {{success}}</p>
+           </div>
+        </div>
+      </div>
+       <div class="row my-4 mt-4">  
+            <div class="col-lg-12 col-md-6 col-sm-6">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>#ID</mat-label>
+                <input matInput type="text" [value]="id" [(ngModel)]="id" id="id" name="id" required   #a="ngModel">
+                <button *ngIf="id" matSuffix mat-icon-button aria-label="Clear" (click)="id=0">
                 <mat-icon>close</mat-icon>
                 </button> 
-                <div *ngIf="na.errors &&(na.dirty || na.touched)" class="alert alert-danger mt-2 p-2">
-                    <div class="p-1" [hidden]="!na.errors.minlength">
-                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu nome deve ter 5 caracteres
+                <div *ngIf="a.errors &&(a.dirty || a.touched)" class="alert alert-danger mt-2 p-2">
+                    <div class="p-1" [hidden]="!a.errors.minlength">
+                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O campo deve ter uma id
                     </div>
-                     <div class="p-1" [hidden]="!na.errors.required">
+                    <div class="p-1" [hidden]="!a.errors.required">
                         <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
                     </div>
                 </div>
             </mat-form-field>
+            <mat-divider></mat-divider>
+              <mat-form-field class="example-form-field" appearance="fill">
+                  <mat-label>Nome</mat-label>
+                  <input matInput type="text" [value] ="name" [(ngModel)]="name" id="name" name="name" required  minlength="5" maxlength="45" #na="ngModel">
+                  <button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+                  <mat-icon>close</mat-icon>
+                  </button> 
+                  <div *ngIf="na.errors &&(na.dirty || na.touched)" class="alert alert-danger mt-2 p-2">
+                      <div class="p-1" [hidden]="!na.errors.minlength">
+                          <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu nome deve ter 5 caracteres
+                      </div>
+                      <div class="p-1" [hidden]="!na.errors.required">
+                          <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+                      </div>
+                  </div>
+              </mat-form-field>
+              <mat-divider></mat-divider>
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input matInput  [type]="hide ? 'password' : 'text'"[value] ="password" [(ngModel)]="password" id="password" name="password" required  minlength="5" #p="ngModel">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <div *ngIf="p.errors &&(p.dirty || p.touched)" class="alert alert-danger mt-2 p-2">
+                    <div class="p-1" [hidden]="!p.errors.minlength">
+                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> A sua  senha deve ter 5 caracteres
+                    </div>
+                    <div class="p-1" [hidden]="!p.errors.required">
+                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-divider></mat-divider>
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>CPF</mat-label>
+                <input matInput type="text" [value] ="CPF" [(ngModel)]="CPF" id="CPF" name="CPF" required  minlength="11" maxlength="11" #c="ngModel">
+                <button *ngIf="CPF" matSuffix mat-icon-button aria-label="Clear" (click)="CPF=''">
+                <mat-icon>close</mat-icon>
+                </button> 
+                <div *ngIf="c.errors &&(c.dirty || c.touched)" class="alert alert-danger mt-2 p-2">
+                    <div class="p-1" [hidden]="!c.errors.minlength">
+                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu CPF deve ter 5 caracteres
+                    </div>
+                    <div class="p-1" [hidden]="!c.errors.required">
+                        <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+                    </div>
+                </div>
+            </mat-form-field>
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Login</mat-label>
+            <input matInput type="text" [value] ="login" [(ngModel)]="login" id="login" name="login" required  minlength="5" maxlength="11" #l="ngModel">
+            <button *ngIf="login" matSuffix mat-icon-button aria-label="Clear" (click)="login=''">
+            <mat-icon>close</mat-icon>
+            </button> 
+            <div *ngIf="l.errors &&(l.dirty || l.touched)" class="alert alert-danger mt-2 p-2">
+                <div class="p-1" [hidden]="!l.errors.minlength">
+                    <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu Login deve ter 5 caracteres
+                </div>
+                <div class="p-1" [hidden]="!l.errors.required">
+                    <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+                </div>
+            </div>
+        </mat-form-field>
+        <mat-form-field class="example-form-field" appearance="fill">
+          <mat-label>Perfil</mat-label>
+          <input matInput type="text" [value] ="profile" [(ngModel)]="profile" id="profile" name="profile" required  minlength="5" maxlength="11" #pl="ngModel">
+          <button *ngIf="profile" matSuffix mat-icon-button aria-label="Clear" (click)="profile=''">
+          <mat-icon>close</mat-icon>
+          </button> 
+          <div *ngIf="pl.errors &&(pl.dirty || pl.touched)" class="alert alert-danger mt-2 p-2">
+              <div class="p-1" [hidden]="!pl.errors.minlength">
+                  <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> O seu Perfil deve ter 5 caracteres
+              </div>
+              <div class="p-1" [hidden]="!pl.errors.required">
+                  <i class="fa fa-exclamation-triangle text-white" aria-hidden="true"></i> Campo invalido
+              </div>
+          </div>
+      </mat-form-field>
+
           </div>
         </div> 
-        <button mat-raised-button color="primary" type="submit" [disabled]="!formsValidar.form.valid" (click)="update(1)">
-            Atualizar
+        <button mat-raised-button color="primary" type="submit" [disabled]="!formsValidar.form.valid" (click)="update(id)">
+           <i class="fa fa-send"></i> Atualizar
         </button>
      </form> 
   </div>
-  <a class="pull-right mt-3" mat-raised-button color="primary" href="/" >
+  <a class="pull-right mt-3" mat-raised-button color="primary" href="/dashboard" >
     Voltar
   </a>
 </div>

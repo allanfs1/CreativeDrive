@@ -4,12 +4,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { UpdateComponent } from './update/update.component';
+import { ViewComponent } from './view/view.component';
 
 
 export const AdminLayoutRoutes: Routes = [
     {
         path:' ',
-        redirectTo:'dashboard'
+        redirectTo:'/login'
      },
  
     {
@@ -36,6 +37,10 @@ export const AdminLayoutRoutes: Routes = [
         path: 'update/:id',
          component: UpdateComponent
     },
+    {
+        path: 'views/:id',
+         component:ViewComponent
+    }
 
  
  

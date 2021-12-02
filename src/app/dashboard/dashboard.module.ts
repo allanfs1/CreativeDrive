@@ -24,7 +24,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatCardModule} from '@angular/material/card';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import {MatButtonModule} from '@angular/material/button';
     MainComponent,
     UsersComponent,
     UpdateComponent,
+    LoginComponent,
+    ViewComponent
 
   ],
   imports: [
@@ -54,7 +57,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [
     UserServiceService

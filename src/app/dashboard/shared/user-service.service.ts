@@ -16,4 +16,21 @@ export class UserServiceService {
   public listAllUSers():Observable<any>{
     return this.http.get(this.URL);
   }
+
+
+  public getById(id:number){
+    return this.http.get(this.URL+"/"+id);
+  }
+
+
+  public update(id:number,objeto:Object){
+    return this.http.put(this.URL+"/"+id,objeto);
+  }
+
+  
+  public create(objeto:Object){
+    return this.http.post(this.URL,objeto);
+  }
+
+
 }

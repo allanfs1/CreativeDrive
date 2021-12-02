@@ -16,7 +16,7 @@
                                     <td>{{item.email}}</td>
                                     <td>{{item.password}}</td>
                                     <td>{{item.login}}</td>
-                                    <td *ngIf="item.profile == 'ADMIN'">
+                                    <td >
                                         <button mat-raised-button type="button" matTooltip="Visualizar" [routerLink]="['/users/all']" routerLinkActive="router-link-active"   [matTooltipPosition]="'above'" class="btn btn-warning btn-link btn-sm btn-just-icon">
                                             <i class="material-icons">visualizar</i>
                                         </button>

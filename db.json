@@ -1,54 +1,48 @@
 {
   "users": [
-	      
-		    {
-		      "id": 1,
-		      "name": "Allan",
-		      "password":"123456",
-		      "CPF":"53875964444",
-		      "email":"allanre@gmail.com",
-		      "profile":"ADMIN",
-		      "login":"admin_allan"
-		    },
-		     {
-		      "id": 2,
-		      "name": "Newton",
-		      "password":"123456",
-		      "CPF":"53875964444",
-		      "email":"allanre@gmail.com",
-		      "profile":"USER",
-		      "login":"admin_allan"
-		    },
-		     {
-		      "id": 3,
-		      "name": "Allan",
-		      "password":"123456",
-		      "CPF":"53875964444",
-		      "email":"allanre@gmail.com",
-		      "profile":"USER",
-              "login":"admin_allan"
-		    },
-		     {
-		      "id": 4,
-		      "name": "Allan",
-		      "password":"123456",
-		      "CPF":"53875964444",
-		      "email":"allanre@gmail.com",
-		      "profile":"USER",
-		      "login":"admin_allan"
-
-		    },
-		     {
-		      "id": 5,
-		      "name": "Allan",
-		      "password":"123456",
-		      "CPF":"53875964444",
-		      "email":"allanre@gmail.com",
-		      "profile":"USER",
-		      "login":"admin_allan"
-
-		    }
-		   
+    {
+      "id": 1,
+      "name": "Allan Ferreira de Souza",
+      "password": "123456",
+      "CPF": "53875964444",
+      "login": "admin_allan",
+      "profile": "ADMIN"
+    },
+    {
+      "id": 2,
+      "name": "Newton",
+      "password": "123456",
+      "CPF": "53875964444",
+      "email": "allanre@gmail.com",
+      "profile": "USER",
+      "login": "admin_allan"
+    },
+    {
+      "id": 3,
+      "name": "Allan",
+      "password": "123456",
+      "CPF": "53875964444",
+      "email": "allanre@gmail.com",
+      "profile": "USER",
+      "login": "admin_allan"
+    },
+    {
+      "id": 4,
+      "name": "Allan",
+      "password": "123456",
+      "CPF": "53875964444",
+      "email": "allanre@gmail.com",
+      "profile": "USER",
+      "login": "admin_allan"
+    },
+    {
+      "id": 5,
+      "name": "Allan",
+      "password": "123456",
+      "CPF": "53875964444",
+      "email": "allanre@gmail.com",
+      "profile": "USER",
+      "login": "admin_allan"
+    }
   ]
-
 }
