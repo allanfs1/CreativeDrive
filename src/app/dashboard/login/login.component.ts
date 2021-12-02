@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
        this.dataUser.name = res["name"]
        this.dataUser.rule = res["profile"]
        this.service.createSession(this.dataUser);
+       this.rotas.navigate(["/dashboard"]);
     });
    }
 
@@ -53,7 +54,6 @@ export class LoginComponent implements OnInit {
        let auth = this.service.auth(obj); 
        if(auth === true){
          this.selectUser(this.name);
-         this.rotas.navigate(["/dashboard"]);
        }else{
         this.erro = "Nome de usuário e senha ivalida";
         this.rotas.navigate(["/login"]);
