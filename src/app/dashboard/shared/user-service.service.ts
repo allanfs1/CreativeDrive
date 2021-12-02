@@ -32,5 +32,10 @@ export class UserServiceService {
     return this.http.post(this.URL,objeto);
   }
 
+    
+  public remove(id:number){
+    return this.http.delete(this.URL+"/"+id);
+  }
+
 
 }

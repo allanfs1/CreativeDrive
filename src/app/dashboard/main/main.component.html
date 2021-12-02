@@ -28,6 +28,16 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-12">
+            <div class="row">
+                <div class="col-12">
+                   <div [hidden]="!success" class="alert alert-success">
+                    <p> {{success}}</p>
+                   </div>
+                   <div [hidden]="!erro" class="alert alert-danger">
+                    <p> {{erro}}</p>
+                   </div>
+                </div>
+              </div>
             <div class="card">
                 <div class="card-header card-header-warning">
                     <h4 class="card-title">Lista de Usuários cadastrado</h4>
@@ -61,7 +71,7 @@
                                     <button mat-raised-button type="button"  [routerLink]="['/update',item.id]"  matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">edit</i>
                                     </button>
-                                    <button mat-raised-button type="button" [routerLink]="['/remove',item.id]"  matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <button mat-raised-button type="button" (click)="removerRegister(item.id)"  matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
                                         <i class="material-icons">close</i>
                                     </button>
                                 </td>
