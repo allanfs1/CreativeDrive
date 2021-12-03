@@ -4,14 +4,14 @@
 
 # 1 – Json Serve Install
 
-npm install -g json-server
+<b> npm install -g json-server </b>
 
 # 2 – Json Serve Iniciar
 
 Porto alternativo
 Você pode iniciar o servidor JSON em outras portas com o --portsinalizador:
 
-json-server --watch db.json --port 3000
+<b> json-server --watch db.json --port 3000 </b> 
 
 Acesso de qualquer lugar
 Você pode acessar sua API falsa de qualquer lugar usando CORS e JSONP.
