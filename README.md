@@ -24,10 +24,10 @@ Você pode acessar sua API falsa de qualquer lugar usando CORS e JSONP.
 # 4 – Rotas
 ### Request	URL	Detalhes
 GET	    /users/all	Busca todos os produtos <br>
-GET	    /users/1	Busca um produto <br>
-POST	/update/1	Salva um produto <br>
-PUT	    /update/1	Atualiza dos os dados do produto <br>
-DELETE	/remove/1	Remove um produto <br>
+GET	    /user/1	    Busca um produto <br>
+POST	  /create  	  Salva um produto <br>
+PUT	    /update/1	  Atualiza dos os dados do produto <br>
+DELETE	/remove/1	  Remove um produto <br>
 
 
 # Projeto  Drive Angular
